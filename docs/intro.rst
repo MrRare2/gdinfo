@@ -11,7 +11,7 @@ Here are the function/classes in ``gdinfo`` that you should know!!
 Level
 =====
 
-First things to know is the ``Level()`` instance, you may see this if you execute the :ref:`find_level` function, here are the info for each attribute/method:
+First things to know is the ``Level()`` instance, you may see this if you execute the :ref:`find_level <find_level>` function, here are the info for each attribute/method:
 
 Attributes
 ----------
@@ -35,7 +35,7 @@ Attributes
 - ``length`` (:ref:`LevelLength`) - The length of the level (Tiny, Short, Medium, Long, XL, or Platformer)
 - ``likes`` (int) - How many likes are in the level
 - ``name`` (str) - The name of the level
-- ``objects`` (int) - How many objects are in the level, caps at 65536(or 65535), i have no idea why
+- ``objects`` (int) - How many objects are in the level, caps at 65536(or 65535), i have no idea why,
 - ``official_song`` (int) - The official song ID for the level (0 if custom song is applied)
 - ``orbs`` (int) - How many orbs are on the level (reward)
 - ``platformer`` (bool) - True if the level is a platformer mode
@@ -47,9 +47,9 @@ Attributes
 Methods
 -------
 
-- ``comment`` (comment: str) [str] - Comment to the level, need to login first via :ref:`login`, returns a comment ID
+- ``comment`` (comment: str) [str] - Comment to the level, need to login first via :ref:`login <login>`, returns a comment ID
 - ``delete_comment`` (commentID: str/int) [True]- Deletes your comment, returns True if success
-- ``get_comments`` (page=0: int) [generator -> :ref:`LevelComment`/None]- Get the comments of the level, sorting from recent to old
+- ``get_comments`` (page=0: int) [generator -> :ref:`LevelComment <LevelComment>`/None]- Get the comments of the level, sorting from recent to old
 - ``vote`` (like=1: int) [True] - Like the level, 0 for dislike, 1 for like, need to login, always returns True even if like/disliked or not (its Robtop's fault)
 
 User
@@ -73,7 +73,7 @@ Attributes
 - ``friend_requests`` (bool) - If the user allow friend requests[?]
 - ``glow`` (bool) - If the user enables glow in their icon set
 - ``messages`` (str) - [?]
-- ``moderator`` (:ref:`Moderator`) - Moderator status of the user
+- ``moderator`` (:ref:`Moderator <Moderator>`) - Moderator status of the user
 - ``moons`` (int) - Moons of the user
 - ``player_id`` (int/str) - Player ID of the user)
 - ``rank`` (int) - Rank of the user in the leaderboard (sometimes inaccurate)
@@ -85,14 +85,14 @@ Attributes
 Methods
 -------
 
-- ``get_comments`` [generator -> :ref:`AccountComnent`/None]- Get the comments of the user (Account comments)
+- ``get_comments`` [generator -> :ref:`AccountComnent <AccountComment>`/None]- Get the comments of the user (Account comments)
 - ``get_levels`` (page=0: int, id_only=False: bool) [generator -> Level/None] - Get the levels of the user (uploaded levels)
 
 Account
 =======
 
 Represents your account
-Returned by :ref:`login`
+Returned by :ref:`login <login>`
 
 Attributes
 ----------
@@ -116,38 +116,25 @@ This is one of the components in ``gdinfo`` where some things are stored
 LevelDifficulty
 ---------------
 
-UNRATED = "Unrated"
-
-AUTO = "Auto"
-
-EASY = "Easy"
-
-NORMAL = "Normal"
-
-HARD = "Hard"
-
-HARDER = "Harder"
-
-INSANE = "Insane"
-
-EASY_DEMON = "Easy Demon"
-
-MEDIUM_DEMON = "Medium Demon"
-
-HARD_DEMON = "Hard Demon"
-
-INSANE_DEMON = "Insane Demon"
-
-EXTREME_DEMON = "Extreme Demon"
+- UNRATED = "Unrated" (i.e. N/A)
+- AUTO = "Auto"
+- EASY = "Easy"
+- NORMAL = "Normal"
+- HARD = "Hard"
+- HARDER = "Harder"
+- INSANE = "Insane"
+- EASY_DEMON = "Easy Demon"
+- MEDIUM_DEMON = "Medium Demon"
+- HARD_DEMON = "Hard Demon"
+- INSANE_DEMON = "Insane Demon"
+- EXTREME_DEMON = "Extreme Demon"
 
 Moderator
 ---------
 
-NONE = 0 - means not a moderator
-
-NORMAL = 1 - just a normal moderator
-
-ELDER = 2 - more powerful than normal mod
+- NONE = 0 - means not a moderator
+- NORMAL = 1 - just a normal moderator
+- ELDER = 2 - more powerful than normal mod
 
 LevelComment
 ============
@@ -166,10 +153,10 @@ Attributes
 - ``level_id`` (str/int) - Level ID of where the comment was uploaded
 - ``likes`` (int) - How many likes the comment get
 - ``message_id`` (int) - Message ID of the comment, used to delete the comment (if the comment is made by yours)
-- ``moderator`` (:ref:`Moderator`) - Moderator status of the commenter
+- ``moderator`` (:ref:`Moderator <Moderator>`) - Moderator status of the commenter
 - ``player_id`` (int) - Player ID of the commenter
 - ``text`` (str) - The actual comment text
-- ``user`` (:ref:`User`) - User info of the commenter
+- ``user`` (:ref:`User <User>`) - User info of the commenter
 
 Methods
 -------
@@ -188,7 +175,7 @@ Attributes
 - ``likes`` (int) - How many likes the comment get
 - ``message_id`` (str/int) - Message IF of the comment, used to delete the comnent (if the comment is made by you)
 - ``text`` (str) - The comment text
-- ``user`` (:ref:`User`) - User info about the commenter
+- ``user`` (:ref:`User <User>`) - User info about the commenter
 
 Methods
 -------
@@ -211,11 +198,11 @@ Arguments:
 
 Returns:
 
-A :ref:`Level` object
+A :ref:`Level <Level>` object
 
 Raises:
 
-:ref:`LevelNotExist` if the level does not exist
+:ref:`LevelNotExist <LevelNotExist>` if the level does not exist
 
 find_user
 ---------
@@ -228,11 +215,11 @@ Arguments:
 
 Returns:
 
-A :ref:`User` object
+A :ref:`User <User>` object
 
 Raises:
 
-:ref:`UserNotExist` if the user dosent exist
+:ref:`UserNotExist <UserNotExist>` if the user dosent exist
 
 login
 -----
@@ -246,11 +233,11 @@ Arguments:
 
 Returns:
 
-A :ref:`Account` object
+A :ref:`Account <Account>` object
 
 Raises:
 
-:ref:`Error` if username or password is incorrect
+:ref:`Error <Error>` if username or password is incorrect
 
 note that im not collecting any of your passwords, this project is entirely **open-source**, so you can see the files used to make this program work.
 
@@ -268,7 +255,7 @@ Returns:
 
 A generator object
 ``str/int`` if you set ``id_only`` to True
-:ref:`Level` if you set ``id_only`` to False (default)
+:ref:`Level <Level>` if you set ``id_only`` to False (default)
 
 search_level
 ------------
@@ -284,7 +271,7 @@ Returns:
 
 A generator object
 ``str/int`` if you set ``id_only`` to True
-:ref:`Level` if you set ``id_only`` to False (default)
+:ref:`Level <Level>` if you set ``id_only`` to False (default)
 
 Exceptions
 ==========
@@ -294,12 +281,12 @@ Some errors may happen while using ``gdinfo``, so i will explain what are those
 LevelNotExist
 -------------
 
-Raised by :ref:`find_level` if the level does not exist, maybe you gave the wrong level ID?
+Raised by :ref:`find_level <find_level>` if the level does not exist, maybe you gave the wrong level ID?
 
 UserNotExist
 ------------
 
-Similar to ``LevelNotExist``, raised by :ref:`find_user` if the user dosent exist on the Geometry Dash server
+Similar to ``LevelNotExist``, raised by :ref:`find_user <find_user>` if the user dosent exist on the Geometry Dash server
 
 Error
 -----
@@ -317,4 +304,4 @@ Yey, basically just credits
 
 `GDDocs <https://wyliemaster.github.io/gddocs/#>`__ by `WylieMaster <https://github.com/wyliemaster>`__
 
-Read `FAQ <./faq.rst>`__ for more.
+Read `FAQ <./faq.html>`__ for more.
